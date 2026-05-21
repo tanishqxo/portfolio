@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cinematic Editor Portfolio</title>
+  <meta name="description" content="Premium cinematic portfolio for a creative editor and fashion content creator specializing in fashion films, commercial edits, social content, and visual storytelling." />
+  <meta name="theme-color" content="#07090d" />
+  <meta property="og:title" content="Cinematic Editor Portfolio" />
+  <meta property="og:description" content="Video Editor • Graphic Designer • Creative Director" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet" />
+  <style>
+    /* Art direction: cinematic fashion portfolio → dark luxury, restrained futuristic, premium editorial motion
+       Palette: cool neutral blacks with electric blue highlights
+       Typography: Cabinet Grotesk + General Sans — assertive display with refined readability
+       Density: spacious hero, balanced editorial sections */
+
+    :root {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
+      --text-hero: clamp(3.4rem, 1rem + 7vw, 8rem);
+
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --space-32: 8rem;
+
+      --color-bg: #07090d;
+      --color-surface: #0d1016;
+      --color-surface-2: #121723;
+      --color-surface-offset: #171d2a;
+      --color-surface-offset-2: #1c2333;
+      --color-surface-dynamic: #233049;
+      --color-divider: rgba(255,255,255,0.08);
+      --color-border: rgba(255,255,255,0.12);
+      --color-text: #f6f7fb;
+      --color-text-muted: rgba(246,247,251,0.7);
+      --color-text-faint: rgba(246,247,251,0.46);
+      --color-text-inverse: #090b10;
+      --color-primary: #78a8ff;
+      --color-primary-hover: #9bbdff;
+      --color-primary-active: #4b86ef;
+      --color-primary-highlight: rgba(120,168,255,0.12);
+      --color-glow: rgba(120,168,255,0.42);
+      --color-glow-soft: rgba(120,168,255,0.16);
+      --color-card: rgba(255,255,255,0.05);
+      --color-glass: rgba(255,255,255,0.06);
+      --radius-sm: 0.375rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1rem;
+      --radius-xl: 1.5rem;
+      --radius-full: 9999px;
+      --transition-interactive: 220ms cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-sm: 0 4px 20px rgba(0,0,0,0.24);
+      --shadow-md: 0 12px 40px rgba(0,0,0,0.34);
+      --shadow-lg: 0 24px 80px rgba(0,0,0,0.42);
+      --content-default: 1180px;
+      --font-body: 'General Sans', 'Inter', sans-serif;
+      --font-display: 'Cabinet Grotesk', 'Inter', sans-serif;
+      --mouse-x: 50%;
+      --mouse-y: 50%;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      scroll-padding-top: 5rem;
+    }
+    body {
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(120,168,255,0.18), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(100,150,255,0.12), transparent 22%),
+        linear-gradient(180deg, #06080d 0%, #090c12 45%, #07090d 100%);
+      overflow-x: hidden;
+    }
+    img, svg, video { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; color: inherit; }
+    button { cursor: pointer; border: none; background: none; }
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+    ::selection {
+      background: rgba(120,168,255,0.25);
+      color: var(--color-text);
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -3rem;
+      left: var(--space-4);
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      z-index: 1000;
+    }
+    .skip-link:focus { top: var(--space-4); }
+
+    .loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at center, rgba(120,168,255,0.08), transparent 26%), #05070b;
+      transition: opacity 0.9s ease, visibility 0.9s ease;
+    }
+    .loader.hidden { opacity: 0; visibility: hidden; }
+    .loader-ring {
+      width: 5.5rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      box-shadow: 0 0 35px rgba(120,168,255,0.18);
+    }
+    .loader-ring::before,
+    .loader-ring::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      border-top-color: rgba(120,168,255,0.9);
+      animation: spin 1.3s linear infinite;
+    }
+    .loader-ring::after {
+      inset: 0.65rem;
+      border-top-color: rgba(255,255,255,0.85);
+      animation-duration: 1.8s;
+      animation-direction: reverse;
+    }
+    .loader-label {
+      margin-top: var(--space-6);
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      color: var(--color-text-muted);
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.06;
+      z-index: 2;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.85'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light;
+    }
+
+    .site-shell {
+      position: relative;
+      isolation: isolate;
+    }
+    .ambient {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background:
+        radial-gradient(28rem 28rem at var(--mouse-x) var(--mouse-y), rgba(120,168,255,0.12), transparent 50%),
+        radial-gradient(34rem 34rem at 80% 15%, rgba(106,132,255,0.08), transparent 50%);
+      transition: background-position 0.2s linear;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--content-default));
+      margin-inline: auto;
+    }
+
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(7,9,13,0.62);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 5rem;
+      gap: var(--space-4);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text);
+    }
+    .brand-mark {
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0.55rem;
+      border-radius: 0.9rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 0 26px rgba(120,168,255,0.12);
+    }
+    .brand-mark svg { width: 100%; height: 100%; color: var(--color-text); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-5);
+      list-style: none;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible { color: var(--color-text); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    .pill,
+    .btn {
+      min-height: 2.9rem;
+      padding: 0.9rem 1.25rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      transition: transform var(--transition-interactive), box-shadow var(--transition-interactive), border-color var(--transition-interactive), background var(--transition-interactive), color var(--transition-interactive);
+      will-change: transform;
+    }
+    .btn:hover,
+    .pill:hover { transform: translateY(-2px); }
+    .btn-primary {
+      color: var(--color-text-inverse);
+      background: linear-gradient(135deg, #f8fbff 0%, #9fbeff 18%, #78a8ff 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.18) inset, 0 0 26px rgba(120,168,255,0.28), 0 12px 30px rgba(59,100,190,0.28);
+    }
+    .btn-primary:hover { box-shadow: 0 0 0 1px rgba(255,255,255,0.24) inset, 0 0 34px rgba(120,168,255,0.4), 0 16px 40px rgba(59,100,190,0.34); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--color-text);
+      backdrop-filter: blur(18px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 0 24px rgba(120,168,255,0.08);
+    }
+    .btn-secondary:hover { border-color: rgba(120,168,255,0.3); box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 0 32px rgba(120,168,255,0.14); }
+    .icon-btn {
+      width: 2.9rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(14px);
+      display: grid;
+      place-items: center;
+    }
+
+    main { position: relative; z-index: 3; }
+    section {
+      position: relative;
+      padding-block: clamp(var(--space-16), 12vw, var(--space-32));
+      content-visibility: auto;
+      contain-intrinsic-size: 800px;
+    }
+
+    .hero {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      padding-top: 7rem;
+      overflow: clip;
+    }
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .hero::before {
+      width: 26rem;
+      height: 26rem;
+      top: 8%;
+      left: -8%;
+      background: radial-gradient(circle, rgba(120,168,255,0.26), transparent 68%);
+      animation: floatOrb 12s ease-in-out infinite;
+    }
+    .hero::after {
+      width: 20rem;
+      height: 20rem;
+      right: 5%;
+      bottom: 12%;
+      background: radial-gradient(circle, rgba(150,180,255,0.18), transparent 68%);
+      animation: floatOrb 14s ease-in-out infinite reverse;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      gap: clamp(var(--space-8), 6vw, var(--space-16));
+      align-items: end;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-6);
+      padding: 0.55rem 0.95rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 22px rgba(120,168,255,0.08);
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-hero);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      max-width: 10ch;
+      text-wrap: balance;
+    }
+    .headline-word {
+      display: inline-block;
+      opacity: 0;
+      filter: blur(12px);
+      animation: headlineReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .headline-word:nth-child(2) { animation-delay: 0.12s; }
+    .headline-word:nth-child(3) { animation-delay: 0.22s; }
+    .headline-word:nth-child(4) { animation-delay: 0.32s; }
+    .headline-word:nth-child(5) { animation-delay: 0.42s; }
+    .headline-word:nth-child(6) { animation-delay: 0.52s; }
+    .hero p.lead {
+      margin-top: var(--space-6);
+      max-width: 38rem;
+      color: var(--color-text-muted);
+      font-size: var(--text-lg);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+    }
+    .hero-socials {
+      display: flex;
+      gap: var(--space-3);
+      margin-top: var(--space-8);
+      list-style: none;
+    }
+    .hero-socials a {
+      width: 3rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 0 18px rgba(120,168,255,0.06);
+    }
+    .hero-socials a:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 0 28px rgba(120,168,255,0.2); }
+
+    .hero-card {
+      position: relative;
+      min-height: 36rem;
+      border-radius: 2rem;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+        radial-gradient(circle at top right, rgba(120,168,255,0.3), transparent 35%),
+        linear-gradient(160deg, #0d1119 0%, #121825 55%, #090d14 100%);
+      box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,0.1), 0 0 0 1px rgba(120,168,255,0.06);
+      backdrop-filter: blur(16px);
+      isolation: isolate;
+      transform: perspective(1200px) rotateY(-8deg);
+    }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent 25%, transparent 55%, rgba(255,255,255,0.04));
+      mix-blend-mode: screen;
+    }
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% 12% auto;
+      width: 16rem;
+      height: 16rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(120,168,255,0.28), transparent 68%);
+      filter: blur(28px);
+      animation: pulseGlow 5s ease-in-out infinite;
+    }
+    .floating-card,
+    .preview-strip,
+    .hero-panel {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(10,13,20,0.54);
+      backdrop-filter: blur(18px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 20px 55px rgba(0,0,0,0.28), 0 0 28px rgba(120,168,255,0.1);
+    }
+    .floating-card {
+      top: 2.2rem;
+      right: 1.4rem;
+      width: min(15.5rem, 46%);
+      border-radius: 1.25rem;
+      padding: var(--space-4);
+      animation: drift 8s ease-in-out infinite;
+    }
+    .floating-card .label,
+    .preview-strip .label,
+    .hero-panel .label {
+      color: var(--color-text-faint);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+    .floating-card strong,
+    .preview-strip strong,
+    .hero-panel strong {
+      display: block;
+      margin-top: var(--space-3);
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      line-height: 1.05;
+    }
+    .floating-card span,
+    .preview-strip span,
+    .hero-panel span {
+      display: block;
+      margin-top: var(--space-2);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .preview-strip {
+      left: 1.3rem;
+      right: 1.3rem;
+      bottom: 1.4rem;
+      border-radius: 1.5rem;
+      padding: var(--space-4);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-3);
+    }
+    .thumb {
+      min-height: 8.2rem;
+      border-radius: 1rem;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.01)),
+        radial-gradient(circle at 70% 20%, rgba(120,168,255,0.2), transparent 30%),
+        linear-gradient(145deg, #111725, #0c111a 55%, #181f2e);
+      overflow: hidden;
+      position: relative;
+    }
+    .thumb::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 15%, rgba(255,255,255,0.14), transparent 55%);
+      transform: translateX(-120%);
+      animation: sheen 7s linear infinite;
+    }
+    .hero-panel {
+      left: 1.3rem;
+      top: 8.3rem;
+      width: min(13rem, 42%);
+      border-radius: 1.25rem;
+      padding: var(--space-4);
+      animation: drift 10s ease-in-out infinite reverse;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: var(--space-6);
+      margin-bottom: var(--space-10);
+    }
+    .section-kicker {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: var(--color-primary-hover);
+      margin-bottom: var(--space-3);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      max-width: 12ch;
+    }
+    .section-copy {
+      color: var(--color-text-muted);
+      max-width: 36rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(var(--space-8), 5vw, var(--space-16));
+      align-items: center;
+    }
+    .portrait {
+      position: relative;
+      min-height: 34rem;
+      border-radius: 2rem;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        radial-gradient(circle at 50% 20%, rgba(120,168,255,0.2), transparent 28%),
+        linear-gradient(180deg, #0f131d 0%, #0a0e14 100%);
+      box-shadow: var(--shadow-md);
+    }
+    .portrait::before {
+      content: "";
+      position: absolute;
+      inset: 10% 18%;
+      border-radius: 40% 40% 38% 38% / 30% 30% 45% 45%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04));
+      box-shadow: 0 0 55px rgba(120,168,255,0.18);
+    }
+    .portrait::after {
+      content: "Portrait Placeholder";
+      position: absolute;
+      inset: auto 0 2rem 0;
+      text-align: center;
+      color: var(--color-text-faint);
+      font-size: var(--text-sm);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .about-copy p + p { margin-top: var(--space-4); }
+    .glass-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+    }
+    .glass-card,
+    .service-card,
+    .testimonial-card,
+    .stat-card,
+    .contact-card,
+    .project-card {
+      border-radius: 1.4rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      backdrop-filter: blur(22px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), var(--shadow-sm);
+    }
+    .glass-card {
+      padding: var(--space-5);
+    }
+    .glass-card h3,
+    .service-card h3,
+    .project-card h3,
+    .contact-card h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      line-height: 1.05;
+      margin-bottom: var(--space-2);
+    }
+    .glass-card p,
+    .service-card p,
+    .project-card p,
+    .testimonial-card p,
+    .contact-card p { color: var(--color-text-muted); }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--space-5);
+    }
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 26rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: var(--space-5);
+      isolation: isolate;
+    }
+    .project-card.large { grid-column: span 7; }
+    .project-card.medium { grid-column: span 5; }
+    .project-card.small { grid-column: span 4; min-height: 22rem; }
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--project-bg);
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.01);
+      transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1), filter 900ms cubic-bezier(0.16, 1, 0.3, 1);
+      filter: saturate(0.92) brightness(0.72);
+      z-index: -2;
+    }
+    .project-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(180deg, rgba(8,10,15,0.1) 0%, rgba(8,10,15,0.22) 35%, rgba(8,10,15,0.92) 100%);
+    }
+    .project-card:hover::before { transform: scale(1.08); filter: saturate(1) brightness(0.82); }
+    .project-card:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 0 0 1px rgba(120,168,255,0.12), 0 0 35px rgba(120,168,255,0.12), 0 25px 60px rgba(0,0,0,0.3); }
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-3);
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.42rem 0.78rem;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--color-text);
+      font-size: var(--text-xs);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+    .project-link {
+      margin-top: var(--space-5);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--color-primary-hover);
+      font-size: var(--text-sm);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-5);
+    }
+    .service-card {
+      padding: var(--space-6);
+      min-height: 16rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -20% -30% auto;
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(120,168,255,0.22), transparent 68%);
+      filter: blur(12px);
+      transition: transform 500ms ease, opacity 500ms ease;
+      opacity: 0.6;
+    }
+    .service-card:hover::before { transform: scale(1.2); opacity: 1; }
+    .service-card:hover { border-color: rgba(120,168,255,0.2); box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 0 30px rgba(120,168,255,0.1), 0 20px 50px rgba(0,0,0,0.3); }
+    .service-index {
+      display: inline-flex;
+      margin-bottom: var(--space-5);
+      color: var(--color-text-faint);
+      font-size: var(--text-xs);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .testimonials-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--space-6);
+      align-items: stretch;
+    }
+    .testimonial-slider {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.75rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      min-height: 21rem;
+    }
+    .slides {
+      display: flex;
+      height: 100%;
+      transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .testimonial-card {
+      min-width: 100%;
+      padding: clamp(var(--space-6), 5vw, var(--space-10));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--space-8);
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+    .testimonial-card p {
+      font-size: var(--text-lg);
+      line-height: 1.55;
+      max-width: 30ch;
+    }
+    .client {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    .client-avatar {
+      width: 3.6rem;
+      height: 3.6rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(120,168,255,0.25));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 0 22px rgba(120,168,255,0.18);
+    }
+    .client span { color: var(--color-text-muted); font-size: var(--text-sm); }
+    .slider-controls {
+      position: absolute;
+      right: var(--space-5);
+      bottom: var(--space-5);
+      display: flex;
+      gap: var(--space-3);
+    }
+    .slider-controls button {
+      width: 3rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(14px);
+    }
+    .quote-panel {
+      display: grid;
+      gap: var(--space-5);
+    }
+    .quote-mini {
+      padding: var(--space-6);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), var(--shadow-sm);
+    }
+    .quote-mini span {
+      display: block;
+      margin-top: var(--space-4);
+      color: var(--color-text-faint);
+      font-size: var(--text-sm);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+    .stat-card {
+      padding: var(--space-6);
+      min-height: 14rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 2rem + 2vw, 4.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      text-shadow: 0 0 28px rgba(120,168,255,0.16);
+    }
+    .stat-label { color: var(--color-text-muted); }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: var(--space-6);
+      align-items: stretch;
+    }
+    .contact-card {
+      padding: clamp(var(--space-6), 5vw, var(--space-10));
+    }
+    .contact-cta {
+      margin-top: var(--space-8);
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 1.4rem + 2vw, 3.6rem);
+      line-height: 0.95;
+      max-width: 10ch;
+      letter-spacing: -0.05em;
+    }
+    .contact-links {
+      margin-top: var(--space-8);
+      display: grid;
+      gap: var(--space-3);
+    }
+    .contact-links a {
+      min-height: 3.4rem;
+      padding: 0.9rem 1rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.03);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--color-text-muted);
+    }
+    .contact-links a:hover { color: var(--color-text); border-color: rgba(120,168,255,0.24); box-shadow: 0 0 22px rgba(120,168,255,0.1); }
+
+    form.contact-form {
+      display: grid;
+      gap: var(--space-4);
+    }
+    .field {
+      display: grid;
+      gap: var(--space-2);
+    }
+    .field label {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .field input,
+    .field textarea {
+      width: 100%;
+      border-radius: 1rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.035);
+      padding: 1rem 1.05rem;
+      min-height: 3.35rem;
+      outline: none;
+      resize: vertical;
+    }
+    .field textarea { min-height: 9rem; }
+    .field input::placeholder,
+    .field textarea::placeholder { color: rgba(246,247,251,0.38); }
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(120,168,255,0.34);
+      box-shadow: 0 0 0 4px rgba(120,168,255,0.08), 0 0 24px rgba(120,168,255,0.08);
+    }
+
+    footer {
+      position: relative;
+      padding: var(--space-8) 0 var(--space-10);
+      z-index: 3;
+    }
+    .footer-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(120,168,255,0.65), transparent);
+      margin-bottom: var(--space-6);
+      box-shadow: 0 0 18px rgba(120,168,255,0.28);
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: var(--space-4);
+      color: var(--color-text-faint);
+      font-size: var(--text-sm);
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+    .footer-links a:hover { color: var(--color-text); }
+
+    .reveal,
+    .reveal-clip {
+      opacity: 1;
+    }
+    @supports (animation-timeline: view()) {
+      .reveal {
+        opacity: 0;
+        animation: reveal-fade linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 55%;
+      }
+      .reveal-clip {
+        clip-path: inset(100% 0 0 0);
+        animation: reveal-clip linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+      }
+      .stagger > * {
+        opacity: 0;
+        animation: reveal-fade linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 55%;
+      }
+    }
+    .stagger > *:nth-child(2) { animation-delay: 80ms; }
+    .stagger > *:nth-child(3) { animation-delay: 160ms; }
+    .stagger > *:nth-child(4) { animation-delay: 240ms; }
+    .stagger > *:nth-child(5) { animation-delay: 320ms; }
+    .stagger > *:nth-child(6) { animation-delay: 400ms; }
+
+    @keyframes reveal-fade { to { opacity: 1; } }
+    @keyframes reveal-clip { to { clip-path: inset(0 0 0 0); } }
+    @keyframes headlineReveal {
+      from { opacity: 0; transform: translateY(0.4em); filter: blur(14px); }
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+    @keyframes floatOrb {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(0.8rem, -1.2rem, 0) scale(1.06); }
+    }
+    @keyframes drift {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.12); opacity: 1; }
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes sheen {
+      0% { transform: translateX(-130%); }
+      45%, 100% { transform: translateX(180%); }
+    }
+
+
+    .thumb-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+    .thumbnail-card,
+    .video-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.4rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      backdrop-filter: blur(18px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), var(--shadow-sm);
+    }
+    .thumbnail-card {
+      min-height: 23rem;
+      display: flex;
+      align-items: end;
+      padding: var(--space-5);
+      isolation: isolate;
+    }
+    .thumbnail-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--thumb-bg);
+      background-size: cover;
+      background-position: center;
+      transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1), filter 800ms cubic-bezier(0.16, 1, 0.3, 1);
+      filter: brightness(0.8) saturate(0.98);
+      z-index: -2;
+    }
+    .thumbnail-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7,9,13,0.06) 0%, rgba(7,9,13,0.18) 35%, rgba(7,9,13,0.9) 100%);
+      z-index: -1;
+    }
+    .thumbnail-card:hover::before { transform: scale(1.06); filter: brightness(0.92) saturate(1.05); }
+    .thumbnail-card h3,
+    .video-info h3 { margin-bottom: var(--space-2); }
+    .thumb-note,
+    .video-note { color: var(--color-text-muted); font-size: var(--text-sm); }
+
+    .reels-grid,
+    .longform-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-5);
+    }
+    .video-frame {
+      padding: var(--space-4);
+    }
+    .video-embed {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 1.1rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(145deg, #121826, #0a0e15 60%, #151d2a);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 0 24px rgba(120,168,255,0.06);
+    }
+    .video-embed.reel { aspect-ratio: 9 / 16; }
+    .video-embed.long { aspect-ratio: 16 / 9; }
+    .video-embed iframe,
+    .video-embed video {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: var(--space-6);
+      color: var(--color-text-muted);
+      background:
+        radial-gradient(circle at 50% 20%, rgba(120,168,255,0.22), transparent 24%),
+        linear-gradient(160deg, #101621 0%, #0a0e15 62%, #141c29 100%);
+    }
+    .video-placeholder span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      margin-bottom: var(--space-4);
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      box-shadow: 0 0 28px rgba(120,168,255,0.14);
+      font-size: 1.2rem;
+    }
+    .video-info {
+      padding-top: var(--space-4);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .about-grid,
+      .testimonials-wrap,
+      .contact-panel { grid-template-columns: 1fr; }
+      .hero-card { min-height: 31rem; transform: none; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .thumb-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .reels-grid,
+      .longform-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .glass-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .project-card.large,
+      .project-card.medium,
+      .project-card.small { grid-column: span 6; }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .nav-inner { min-height: 4.5rem; }
+      .hero { min-height: auto; padding-top: 7rem; padding-bottom: var(--space-16); }
+      .hero h1 { max-width: 9ch; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn { width: 100%; }
+      .preview-strip { grid-template-columns: 1fr; }
+      .floating-card, .hero-panel { width: calc(100% - 2.6rem); }
+      .floating-card { right: 1.3rem; top: 1.2rem; }
+      .hero-panel { top: auto; bottom: 11.5rem; }
+      .glass-grid,
+      .services-grid,
+      .stats-grid,
+      .work-grid,
+      .thumb-gallery,
+      .reels-grid,
+      .longform-grid { grid-template-columns: 1fr; }
+      .project-card.large,
+      .project-card.medium,
+      .project-card.small { grid-column: auto; min-height: 22rem; }
+      .section-head,
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .contact-links a { font-size: var(--text-sm); }
+      .brand span:last-child { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="loader" id="loader" aria-hidden="true">
+    <div>
+      <div class="loader-ring"></div>
+      <div class="loader-label">Loading Experience</div>
+    </div>
+  </div>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container nav-inner">
+        <a href="#hero" class="brand" aria-label="Go to homepage">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 35V13h10.4c5.7 0 9.6 3.1 9.6 8.4 0 5.4-3.9 8.7-9.6 8.7H16.6V35H10Z" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/>
+              <path d="M28.5 35 38 13" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+              <path d="M24.5 24H16.6" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span>Visual Atelier</span>
+        </a>
+
+        <nav aria-label="Primary navigation">
+          <ul class="nav-links" role="list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#thumbnails">Thumbnails</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="pill btn-secondary" href="#work">View Projects</a>
+          <a class="icon-btn" href="#contact" aria-label="Jump to contact section">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7"/>
+              <path d="M7 7h10v10"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow reveal">Tanishq's Portfolio</div>
+            <h1 aria-label="I Create Visual Stories That Feel Cinematic.">
+              <span class="headline-word">I</span>
+              <span class="headline-word">Create</span>
+              <span class="headline-word">Visual</span>
+              <span class="headline-word">Stories</span>
+              <span class="headline-word">That</span>
+              <span class="headline-word">Feel</span>
+              <span class="headline-word">Cinematic.</span>
+            </h1>
+            <p class="lead reveal">Video Editor • Graphic Designer • Creative Director</p>
+            <div class="hero-actions reveal">
+              <a class="btn btn-primary" href="#work">View My Work</a>
+              <a class="btn btn-secondary" href="#contact">Let’s Work Together</a>
+            </div>
+            <ul class="hero-socials reveal" role="list" aria-label="Social links">
+              <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+              <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12s0-3.3-.42-4.9a2.8 2.8 0 0 0-1.97-1.98C18.04 4.7 12 4.7 12 4.7s-6.04 0-7.61.42A2.8 2.8 0 0 0 2.42 7.1C2 8.7 2 12 2 12s0 3.3.42 4.9a2.8 2.8 0 0 0 1.97 1.98c1.57.42 7.61.42 7.61.42s6.04 0 7.61-.42a2.8 2.8 0 0 0 1.97-1.98C22 15.3 22 12 22 12Z"/><path d="m10 15 5-3-5-3v6Z" fill="currentColor" stroke="none"/></svg></a></li>
+              <li><a href="mailto:hello@visualatelier.com" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="m4 8 8 6 8-6"/></svg></a></li>
+              <li><a href="https://wa.me/910000000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 11.5a8.5 8.5 0 0 1-12.65 7.44L4 20l1.11-3.23A8.5 8.5 0 1 1 20 11.5Z"/><path d="M9.4 8.8c.2-.4.4-.4.7-.4h.6c.2 0 .4 0 .5.4l.6 1.5c.1.3 0 .4-.1.6l-.5.6c-.1.1-.2.3-.1.4.3.6.9 1.4 2 2 .5.3.9.1 1.1-.1l.5-.6c.1-.2.3-.2.6-.1l1.4.7c.2.1.3.2.2.5l-.2.8c-.1.3-.2.5-.5.7-.6.4-1.6.7-2.8.3-1.1-.4-2.3-1.2-3.3-2.2-1-1-1.8-2.1-2.1-3.2-.4-1.3 0-2.3.4-2.9Z"/></svg></a></li>
+            </ul>
+          </div>
+
+          <div class="hero-card reveal-clip" aria-label="Featured visual composition">
+            <div class="floating-card">
+              <span class="label">Featured Frame</span>
+              <strong>Luxury Motion for Fashion, Lifestyle, and Brand Films</strong>
+              <span>Elegant edits, premium pacing, polished color, and visual storytelling.</span>
+            </div>
+            <div class="hero-panel">
+              <span class="label">Current Focus</span>
+              <strong>Fashion Campaign Cuts</strong>
+              <span>Editorial reels, social ads, launch films, creator visuals.</span>
+            </div>
+            <div class="preview-strip">
+              <div>
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80&fit=crop" alt="Midnight Silk" width="200" height="140" loading="lazy" style="width:100%;height:8.2rem;object-fit:cover;border-radius:1rem;display:block;" />
+                <strong>Midnight Silk</strong>
+                <span>Runway teaser edit</span>
+              </div>
+              <div>
+                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80&fit=crop" alt="Wooden Tumbler Motion Graphics Ad" width="200" height="140" loading="lazy" style="width:100%;height:8.2rem;object-fit:cover;border-radius:1rem;display:block;" />
+                <strong>Wooden Tumbler Motion Graphics Ad</strong>
+                <span>Lifestyle launch campaign</span>
+              </div>
+              <div>
+                <img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=400&q=80&fit=crop" alt="Luxury Brand Launch" width="200" height="140" loading="lazy" style="width:100%;height:8.2rem;object-fit:cover;border-radius:1rem;display:block;" />
+                <strong>Luxury Brand Launch</strong>
+                <span>Cinematic creator reel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="section-kicker">About</div>
+              <h2 class="section-title">Delhi-based visual editing and design crafted with precision, clarity, and premium taste.</h2>
+            </div>
+            <p class="section-copy">I’m Tanishq, an Indian video editor and graphic designer based in Delhi, focused on creating polished visual content for creators, brands, and campaigns that need strong storytelling with a premium finish.</p>
+          </div>
+
+          <div class="about-grid">
+            <div class="portrait reveal-clip" style="overflow:hidden;"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&q=85&fit=crop" alt="Editorial portrait placeholder for Tanishq Kumar" width="600" height="800" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+            <div class="about-copy reveal">
+              <p>Over the last three years, I have worked across reels, motion graphics, thumbnails, Meta ads, long-form edits, and UGC content—building visuals that are clean, intentional, and tailored for modern digital platforms.</p>
+              <p>With experience working with 20+ creators and brands, I combine editing, design, and creative direction to deliver content that feels sharp, professional, and visually memorable.</p>
+              <div class="glass-grid stagger">
+                <article class="glass-card">
+                  <h3>Multi-Format Expertise</h3>
+                  <p>Reels, UGC videos, long-form edits, ad creatives, thumbnails, and motion graphics under one refined workflow.</p>
+                </article>
+                <article class="glass-card">
+                  <h3>Professional Finish</h3>
+                  <p>Every frame is shaped with careful pacing, clean composition, and a premium visual standard.</p>
+                </article>
+                <article class="glass-card">
+                  <h3>Creator & Brand Experience</h3>
+                  <p>Trusted by 20+ creators and brands for content that performs well while still looking elevated and distinctive.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="section-kicker">Featured Work</div>
+              <h2 class="section-title">Projects designed to move like a film, not just content.</h2>
+            </div>
+            <p class="section-copy">A curated mix of fashion edits, commercial campaigns, cinematic reels, and social content that balances clean storytelling with premium motion and visual depth.</p>
+          </div>
+
+          <div class="work-grid stagger">
+            <article class="project-card large" style="--project-bg: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=700&q=85&fit=crop')">
+              <div class="project-meta"><span class="tag">Fashion</span><span class="tag">Campaign</span></div>
+              <h3>Midnight Muse</h3>
+              <p>An editorial campaign film blending runway texture, slow-motion portraits, and rich color for a premium fashion release.</p>
+              <a class="project-link" href="#contact">View Project <span aria-hidden="true">↗</span></a>
+            </article>
+
+            <article class="project-card medium" style="--project-bg: radial-gradient(circle at 20% 10%, rgba(120,168,255,0.24), transparent 24%), linear-gradient(145deg, #111827, #080d14 60%, #131b29);">
+              <div class="project-meta"><span class="tag">Commercial</span></div>
+              <h3>Still / Motion</h3>
+              <p>A sleek product and lifestyle commercial focused on clean transitions, reflective lighting, and polished movement.</p>
+              <a class="project-link" href="#contact">View Project <span aria-hidden="true">↗</span></a>
+            </article>
+
+            <article class="project-card small" style="--project-bg: radial-gradient(circle at 80% 20%, rgba(120,168,255,0.22), transparent 24%), linear-gradient(145deg, #141b2a, #0c1017 60%, #0e1320);">
+              <div class="project-meta"><span class="tag">YouTube</span></div>
+              <h3>Creator Capsule</h3>
+              <p>High-retention YouTube editing with strong pacing, cinematic b-roll, and premium visual structuring.</p>
+              <a class="project-link" href="#contact">View Project <span aria-hidden="true">↗</span></a>
+            </article>
+
+            <article class="project-card small" style="--project-bg: radial-gradient(circle at 10% 15%, rgba(120,168,255,0.22), transparent 22%), linear-gradient(145deg, #121b28, #090d14 55%, #182132);">
+              <div class="project-meta"><span class="tag">Short-form Content</span></div>
+              <h3>Glow Sequence</h3>
+              <p>Social-first short-form edits built for attention, atmosphere, and polished storytelling in under 30 seconds.</p>
+              <a class="project-link" href="#contact">View Project <span aria-hidden="true">↗</span></a>
+            </article>
+
+            <article class="project-card small" style="--project-bg: radial-gradient(circle at 50% 10%, rgba(120,168,255,0.26), transparent 22%), linear-gradient(145deg, #182332, #0a0f16 58%, #151d2a);">
+              <div class="project-meta"><span class="tag">Cinematic Reels</span></div>
+              <h3>Blue Hour Frames</h3>
+              <p>A mood-driven reel series combining elevated color, subtle motion graphics, and tactile section reveals.</p>
+              <a class="project-link" href="#contact">View Project <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="section-kicker">Experience / Services</div>
+              <h2 class="section-title">Creative services built for modern brands and creators.</h2>
+            </div>
+            <p class="section-copy">Flexible premium post-production support across campaigns, launches, creator ecosystems, and cinematic social media formats.</p>
+          </div>
+
+          <div class="services-grid stagger">
+            <article class="service-card">
+              <span class="service-index">01</span>
+              <h3>Video Editing</h3>
+              <p>Story-led edits with high-end pacing, visual cohesion, and polished frame selection.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-index">02</span>
+              <h3>Color Grading</h3>
+              <p>Clean cinematic tone shaping for luxury, lifestyle, and fashion-forward visual identity.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-index">03</span>
+              <h3>Motion Graphics</h3>
+              <p>Minimal premium motion systems, titles, transitions, and animated brand elements.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-index">04</span>
+              <h3>Social Media Content</h3>
+              <p>Platform-native edits crafted for retention, clarity, and visual sophistication.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-index">05</span>
+              <h3>Fashion Campaign Editing</h3>
+              <p>Editorial visuals with texture-rich pacing, luxury mood, and launch-ready campaign polish.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-index">06</span>
+              <h3>Cinematic Reels</h3>
+              <p>Immersive short-form storytelling designed to feel atmospheric, modern, and premium.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="thumbnails">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="section-kicker">Thumbnail Design</div>
+              <h2 class="section-title">Click-worthy covers built with strong contrast, clear hierarchy, and premium composition.</h2>
+            </div>
+            <p class="section-copy">Use this section to showcase your best YouTube thumbnails, campaign key art, or social promo covers. Replace these examples with your own exported JPG or PNG designs.</p>
+          </div>
+          <div class="thumb-gallery stagger">
+            <article class="thumbnail-card" style="--thumb-bg: url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=900&q=85&fit=crop');">
+              <div>
+                <span class="tag">YouTube</span>
+                <h3>Fashion Breakdown</h3>
+                <p class="thumb-note">High-contrast editorial thumbnail with face focus and luxury styling.</p>
+              </div>
+            </article>
+            <article class="thumbnail-card" style="--thumb-bg: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&q=85&fit=crop');">
+              <div>
+                <span class="tag">Lifestyle</span>
+                <h3>Creator Visual Pack</h3>
+                <p class="thumb-note">Social cover design with clean typography and cinematic color treatment.</p>
+              </div>
+            </article>
+            <article class="thumbnail-card" style="--thumb-bg: url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=900&q=85&fit=crop');">
+              <div>
+                <span class="tag">Campaign</span>
+                <h3>Launch Cover Art</h3>
+                <p class="thumb-note">Premium visual framing designed for luxury campaigns and announcements.</p>
+              </div>
+            </article>
+            <article class="thumbnail-card" style="--thumb-bg: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900&q=85&fit=crop');">
+              <div>
+                <span class="tag">Branding</span>
+                <h3>Editorial Promo</h3>
+                <p class="thumb-note">Bold text placement with a polished high-fashion image-led layout.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="reels">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="section-kicker">Reels Showcase</div>
+              <h2 class="section-title">Short-form edits made for movement, atmosphere, and instant attention.</h2>
+            </div>
+            <p class="section-copy">This section is ready for your Instagram reels, YouTube Shorts, or vertical campaign edits. For now, I added polished placeholders where your embeds or MP4s will go.</p>
+          </div>
+          <div class="reels-grid stagger">
+            <article class="video-frame">
+              <div class="video-embed reel">
+                <iframe src="https://www.youtube.com/embed/GeKGoPrzOJg" title="Motion graphics Tumbler Ad" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="video-info">
+                <span class="tag">Reel 01</span>
+                <h3>Motion graphics Tumbler Ad</h3>
+                <p class="video-note">Your first featured reel, embedded directly from YouTube Shorts.</p>
+              </div>
+            </article>
+            <article class="video-frame">
+              <div class="video-embed reel">
+                <iframe src="https://www.youtube.com/embed/KOgfx8Gbwj0" title="US client motion graphics Ad" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="video-info">
+                <span class="tag">Reel 02</span>
+                <h3>US client motion graphics Ad</h3>
+                <p class="video-note">A clean short-form motion graphics ad embedded directly from YouTube Shorts.</p>
+              </div>
+            </article>
+            <article class="video-frame">
+              <div class="video-embed reel">
+                <iframe src="https://www.youtube.com/embed/bwkwijfhxPc" title="Iris Celeste Luxury Brand Launch" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="video-info">
+                <span class="tag">Reel 03</span>
+                <h3>Iris Celeste Luxury Brand Launch</h3>
+                <p class="video-note">A premium brand-launch reel embedded directly from YouTube Shorts.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="longform">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="section-kicker">Long-Format Videos</div>
+              <h2 class="section-title">Three featured long-form projects for deeper storytelling and editing range.</h2>
+            </div>
+            <p class="section-copy">This area is built for your main YouTube videos, branded films, breakdowns, or extended edits. It already has space for exactly three wide-format videos.</p>
+          </div>
+          <div class="longform-grid stagger">
+            <article class="video-frame">
+              <div class="video-embed long">
+                <div class="video-placeholder"><div><span>▶</span><strong>Long Video 1</strong><br/>Paste your YouTube link here</div></div>
+              </div>
+              <div class="video-info">
+                <span class="tag">Featured Film</span>
+                <h3>Main Portfolio Piece</h3>
+                <p class="video-note">Use your best long-format edit here as the anchor video.</p>
+              </div>
+            </article>
+            <article class="video-frame">
+              <div class="video-embed long">
+                <div class="video-placeholder"><div><span>▶</span><strong>Long Video 2</strong><br/>Paste your YouTube link here</div></div>
+              </div>
+              <div class="video-info">
+                <span class="tag">YouTube</span>
+                <h3>Story-Driven Edit</h3>
+                <p class="video-note">Ideal for a high-retention breakdown, vlog edit, or cinematic brand piece.</p>
+              </div>
+            </article>
+            <article class="video-frame">
+              <div class="video-embed long">
+                <div class="video-placeholder"><div><span>▶</span><strong>Long Video 3</strong><br/>Paste your YouTube link here</div></div>
+              </div>
+              <div class="video-info">
+                <span class="tag">Commercial</span>
+                <h3>Extended Campaign Edit</h3>
+                <p class="video-note">Best for documentary-style branded storytelling or premium commercial work.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+<section id="testimonials">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="section-kicker">Testimonials</div>
+              <h2 class="section-title">Trusted by brands and creators who care about detail.</h2>
+            </div>
+            <p class="section-copy">A premium process is more than visuals—it is communication, taste, timing, and the ability to translate a concept into a finished cinematic experience.</p>
+          </div>
+
+          <div class="testimonials-wrap">
+            <div class="testimonial-slider reveal-clip" aria-roledescription="carousel">
+              <div class="slides" id="slides">
+                <article class="testimonial-card">
+                  <p>“Every frame felt elevated. The edit was stylish, emotionally sharp, and exactly the premium energy our campaign needed.”</p>
+                  <div class="client">
+                    <img class="client-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80&fit=crop&crop=faces" alt="Ava Laurent" width="56" height="56" loading="lazy" style="object-fit:cover;border-radius:50%;" />
+                    <div>
+                      <strong>Ava Laurent</strong>
+                      <span>Fashion Brand Founder</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="testimonial-card">
+                  <p>“The pacing, the color, the polish—everything looked expensive without trying too hard. It completely changed how our launch was perceived.”</p>
+                  <div class="client">
+                    <img class="client-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80&fit=crop&crop=faces" alt="Daniel Cruz" width="56" height="56" loading="lazy" style="object-fit:cover;border-radius:50%;" />
+                    <div>
+                      <strong>Daniel Cruz</strong>
+                      <span>Commercial Creative Lead</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="testimonial-card">
+                  <p>“What stood out most was the taste level. Nothing felt generic, and the final reel looked like a piece of visual direction, not just editing.”</p>
+                  <div class="client">
+                    <img class="client-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&q=80&fit=crop&crop=faces" alt="Sofia Reed" width="56" height="56" loading="lazy" style="object-fit:cover;border-radius:50%;" />
+                    <div>
+                      <strong>Sofia Reed</strong>
+                      <span>Lifestyle Content Creator</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="slider-controls">
+                <button type="button" id="prevSlide" aria-label="Previous testimonial">←</button>
+                <button type="button" id="nextSlide" aria-label="Next testimonial">→</button>
+              </div>
+            </div>
+
+            <div class="quote-panel stagger">
+              <div class="quote-mini">
+                <p>Premium visual storytelling with a calm process, clear communication, and refined execution.</p>
+                <span>Agency collaboration</span>
+              </div>
+              <div class="quote-mini">
+                <p>Designed for fashion, luxury, lifestyle, and social-first creators who want every frame to feel intentional.</p>
+                <span>Creator partnership</span>
+              </div>
+              <div class="quote-mini">
+                <p>From teaser edits to full campaign narratives, the finish always feels cohesive, modern, and elevated.</p>
+                <span>Brand campaign delivery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="stats">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="section-kicker">Stats</div>
+              <h2 class="section-title">Measured impact with a premium creative standard.</h2>
+            </div>
+            <p class="section-copy">Numbers matter, but the real value is in how strong visual identity improves audience attention, brand perception, and campaign performance.</p>
+          </div>
+
+          <div class="stats-grid stagger">
+            <article class="stat-card">
+              <span class="stat-value" data-target="120" data-suffix="+">0</span>
+              <span class="stat-label">Projects Completed</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value" data-target="45" data-suffix="+">0</span>
+              <span class="stat-label">Brand Collaborations</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value" data-target="18" data-suffix="M+">0</span>
+              <span class="stat-label">Views Generated</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value" data-target="6" data-suffix="+">0</span>
+              <span class="stat-label">Years Experience</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="section-kicker">Contact</div>
+              <h2 class="section-title">Let’s create work that feels timeless, polished, and unforgettable.</h2>
+            </div>
+            <p class="section-copy">Reach out for campaign edits, creator content, fashion visuals, branded storytelling, or a custom cinematic post-production workflow.</p>
+          </div>
+
+          <div class="contact-panel">
+            <article class="contact-card reveal">
+              <p class="section-kicker">Premium Collaboration</p>
+              <div class="contact-cta">Let’s Create Something Beautiful.</div>
+              <div class="contact-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><span>Instagram</span><span>@yourhandle</span></a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><span>YouTube</span><span>/yourchannel</span></a>
+                <a href="mailto:hello@visualatelier.com"><span>Email</span><span>hello@visualatelier.com</span></a>
+                <a href="https://wa.me/910000000000" target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><span>Quick project inquiry</span></a>
+              </div>
+            </article>
+
+            <article class="contact-card reveal-clip">
+              <form class="contact-form">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" placeholder="Your name" />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="Your email address" />
+                </div>
+                <div class="field">
+                  <label for="project">Project Type</label>
+                  <input id="project" name="project" type="text" placeholder="Fashion campaign, reel edit, commercial launch..." />
+                </div>
+                <div class="field">
+                  <label for="message">Tell me about your vision</label>
+                  <textarea id="message" name="message" placeholder="Share your timeline, goals, and the kind of visual experience you want to create."></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Send Inquiry</button>
+              </form>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-line" aria-hidden="true"></div>
+        <div class="footer-inner">
+          <span>© 2026 Visual Atelier. All rights reserved.</span>
+          <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const loader = document.getElementById('loader');
+    window.addEventListener('load', () => {
+      setTimeout(() => loader.classList.add('hidden'), 900);
+    });
+
+    const root = document.documentElement;
+    window.addEventListener('pointermove', (event) => {
+      const x = (event.clientX / window.innerWidth) * 100;
+      const y = (event.clientY / window.innerHeight) * 100;
+      root.style.setProperty('--mouse-x', `${x}%`);
+      root.style.setProperty('--mouse-y', `${y}%`);
+    }, { passive: true });
+
+    const slides = document.getElementById('slides');
+    const nextSlide = document.getElementById('nextSlide');
+    const prevSlide = document.getElementById('prevSlide');
+    let currentSlide = 0;
+    const totalSlides = slides.children.length;
+
+    const updateSlider = () => {
+      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    };
+
+    nextSlide.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    });
+
+    prevSlide.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlider();
+    });
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    }, 4800);
+
+    const counters = document.querySelectorAll('.stat-value');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting || entry.target.dataset.counted) return;
+        entry.target.dataset.counted = 'true';
+        const element = entry.target;
+        const target = Number(element.dataset.target);
+        const suffix = element.dataset.suffix || '';
+        const duration = 1600;
+        const start = performance.now();
+
+        const animate = (time) => {
+          const progress = Math.min((time - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.round(target * eased);
+          element.textContent = `${value}${suffix}`;
+          if (progress < 1) requestAnimationFrame(animate);
+        };
+
+        requestAnimationFrame(animate);
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+
+    document.querySelector('.contact-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const button = event.currentTarget.querySelector('button');
+      const original = button.textContent;
+      button.textContent = 'Inquiry Sent';
+      button.disabled = true;
+      setTimeout(() => {
+        button.textContent = original;
+        button.disabled = false;
+      }, 2200);
+    });
+  </script>
+</body>
+</html>
